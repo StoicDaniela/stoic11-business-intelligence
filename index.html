@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bg">
 <head>
@@ -52,7 +51,7 @@
             font-size: 28px;
             font-weight: 600;
             margin: 0;
-            color: #1d6096;
+            color: #56A4B1;
             letter-spacing: -0.5px;
         }
 
@@ -79,7 +78,7 @@
         }
 
         nav a:hover {
-            color: #1e293b;
+            color: #56A4B1;
         }
 
         /* Hero Section */
@@ -96,7 +95,7 @@
             font-size: 48px;
             font-weight: 600;
             margin-bottom: 24px;
-            color: #1d6096;
+            color: #56A4B1;
             line-height: 1.2;
             letter-spacing: -1px;
         }
@@ -114,7 +113,7 @@
 
         .cta-button {
             display: inline-block;
-            background: #1d6096;
+            background: #56A4B1;
             color: white;
             padding: 16px 32px;
             text-decoration: none;
@@ -127,7 +126,7 @@
         }
 
         .cta-button:hover {
-            background: #1d6096;
+            background: #56A4B1;
         }
 
         /* Stats */
@@ -174,7 +173,7 @@
             font-size: 36px;
             font-weight: 600;
             margin-bottom: 16px;
-            color: #1d6096;
+            color: #56A4B1;
             letter-spacing: -0.5px;
         }
 
@@ -225,7 +224,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(29, 96, 150, 0.85), rgba(29, 96, 150, 0.75));
+            background: linear-gradient(45deg, rgba(86, 164, 177, 0.85), rgba(86, 164, 177, 0.75));
         }
 
         .service-card-content {
@@ -240,27 +239,28 @@
             right: 20px;
             z-index: 3;
             background: rgba(255, 255, 255, 0.95);
-            color: #1d6096;
-            border: none;
+            color: #56A4B1;
+            border: 1px solid #56A4B1;
         }
 
         .service-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
+            width: 113px;
+            height: 113px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 24px;
-            font-size: 28px;
-            color: #1e293b;
-            background: #dbeafe;
+            font-size: 35px;
+            color: #454545;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #56A4B1;
             transition: all 0.2s ease;
         }
 
         .service-card:hover .service-icon {
-            background: #1e293b;
-            color: white;
+            background: #56A4B1;
+            color: #FFFFFF;
         }
 
         .service-card h3 {
@@ -303,7 +303,7 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            background: #1e293b;
+            background: #56A4B1;
             color: white;
             border-radius: 50%;
             font-size: 24px;
@@ -342,22 +342,23 @@
         }
 
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            width: 113px;
+            height: 113px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 16px;
-            font-size: 20px;
-            color: #1e293b;
-            background: #dbeafe;
+            font-size: 35px;
+            color: #454545;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #56A4B1;
             transition: all 0.2s ease;
         }
 
         .feature-item:hover .feature-icon {
-            background: #1e293b;
-            color: white;
+            background: #56A4B1;
+            color: #FFFFFF;
         }
 
         .feature-item h3 {
@@ -373,41 +374,148 @@
             font-size: 15px;
         }
 
-        /* Testimonials */
-        .testimonials {
-            background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80');
+        /* Resources */
+        .resources {
+            background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)), url('https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             padding: 100px 0;
         }
 
-        .testimonials-grid {
+        .resources-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 40px;
             margin-top: 80px;
         }
 
-        .testimonial {
+        .resource-item {
             background: #fff;
+            padding: 0;
+            border-radius: 12px;
+            border: 1px solid #e1e5e9;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .resource-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .resource-item.available {
+            border-left: 4px solid #56A4B1;
+        }
+
+        .resource-item.coming-soon {
+            border-left: 4px solid #ccc;
+            opacity: 0.85;
+        }
+
+        .resource-icon {
+            font-size: 48px;
+            text-align: center;
+            padding: 30px 0 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .resource-content {
+            padding: 0 30px 30px;
+        }
+
+        .resource-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .resource-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .resource-features {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .resource-features span {
+            font-size: 14px;
+            color: #56A4B1;
+            font-weight: 500;
+        }
+
+        .resource-button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .resource-button.available {
+            background: #56A4B1;
+            color: white;
+        }
+
+        .resource-button.available:hover {
+            background: #4a8f9b;
+            transform: translateY(-2px);
+        }
+
+        .resource-button.coming-soon {
+            background: #f8f9fa;
+            color: #666;
+            border: 2px solid #e1e5e9;
+            cursor: default;
+        }
+
+        .resource-status {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .resource-item.available .resource-status {
+            background: #56A4B1;
+            color: white;
+        }
+
+        .resource-item.coming-soon .resource-status {
+            background: #e1e5e9;
+            color: #666;
+        }
+
+        .resources-cta {
+            text-align: center;
+            margin-top: 60px;
             padding: 40px;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
             border: 1px solid #e1e5e9;
         }
 
-        .testimonial-text {
-            font-size: 16px;
-            margin-bottom: 24px;
+        .resources-cta p {
+            font-size: 18px;
             color: #333;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .testimonial-author {
+            margin-bottom: 24px;
             font-weight: 500;
-            color: #1a1a1a;
-            font-size: 15px;
         }
 
         /* Contact */
@@ -457,7 +565,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #1e293b;
+            border-color: #56A4B1;
         }
 
         .form-group textarea {
@@ -466,7 +574,7 @@
         }
 
         .submit-btn {
-            background: #1e293b;
+            background: #56A4B1;
             color: white;
             padding: 14px 28px;
             border: none;
@@ -479,7 +587,7 @@
         }
 
         .submit-btn:hover {
-            background: #1e293b;
+            background: #56A4B1;
         }
 
         .contact-info h3 {
@@ -498,7 +606,7 @@
 
         .info-icon {
             font-size: 20px;
-            color: #1e293b;
+            color: #56A4B1;
             margin-top: 2px;
         }
 
@@ -508,9 +616,30 @@
             line-height: 1.5;
         }
 
+        .calendar-booking {
+            background: #e8f4f6;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #56A4B1;
+            box-shadow: 0 2px 8px rgba(86, 164, 177, 0.1);
+        }
+
+        .calendar-link {
+            color: #56A4B1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .calendar-link:hover {
+            color: #4a8f9b;
+            text-decoration: underline;
+        }
+
         /* Footer */
         footer {
-            background: #1d6096;
+            background: #56A4B1;
             color: #f8f9fa;
             text-align: center;
             padding: 40px 0;
@@ -525,7 +654,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #1d6096;
+            background: #56A4B1;
             color: white;
             width: 48px;
             height: 48px;
@@ -544,7 +673,7 @@
         }
 
         .back-to-top:hover {
-            background: #1e293b;
+            background: #56A4B1;
         }
 
         /* Responsive Design */
@@ -601,7 +730,7 @@
             .services,
             .features,
             .process,
-            .testimonials,
+            .resources,
             .contact {
                 padding: 80px 0;
             }
@@ -739,7 +868,7 @@
                     <p>Оптимизирани процеси за бързо доставяне на качествени анализи</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">○</div>
+                    <div class="feature-icon">◎</div>
                     <h3>Персонализиран Подход</h3>
                     <p>Всеки анализ е адаптиран спрямо специфичните нужди на вашия бизнес</p>
                 </div>
@@ -767,30 +896,61 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
+    <!-- Resources Section -->
+    <section class="resources">
         <div class="container">
-            <h2 class="section-title">Какво Казват Нашите Клиенти</h2>
-            <p class="section-subtitle">Реални отзиви от компании, които са трансформирали бизнеса си с нашите анализи</p>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        "STOIC 11 трансформира начина, по който вземаме бизнес решения. Техните анализи са точни, бързи и изключително полезни за нашата стратегия."
+            <h2 class="section-title">Полезни Ресурси</h2>
+            <p class="section-subtitle">Безплатни инструменти за бизнес интелигентност - трансформирайте данните в решения</p>
+            <div class="resources-grid">
+                <div class="resource-item available">
+                    <div class="resource-icon">🎯</div>
+                    <div class="resource-content">
+                        <h3>BI Manager Pro</h3>
+                        <p>Професионален инструмент за бизнес интелигентност. Създавайте и тествайте бизнес хипотези, моделирайте сценарии и анализирайте данни.</p>
+                        <div class="resource-features">
+                            <span>✓ Създаване на хипотези</span>
+                            <span>✓ Моделиране на сценарии</span>
+                            <span>✓ Анализ на данни</span>
+                            <span>✓ Dashboard с метрики</span>
+                        </div>
+                        <a href="https://stoicdaniela.github.io/business-intelligence-app/" target="_blank" class="resource-button available">Използвайте Сега</a>
                     </div>
-                    <div class="testimonial-author">Мария Петрова, CEO TechStart</div>
+                    <div class="resource-status">Налично</div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        "Професионален подход и отлични резултати. Препоръчвам STOIC 11 на всеки, който търси качествени бизнес анализи."
+                <div class="resource-item coming-soon">
+                    <div class="resource-icon">🚨</div>
+                    <div class="resource-content">
+                        <h3>BI Аларма за Аномалии</h3>
+                        <p>Проактивни известия при неочаквани промени в данните. 24/7 мониторинг за идентифициране на проблеми и възможности.</p>
+                        <div class="resource-features">
+                            <span>✓ Автоматично откриване на аномалии</span>
+                            <span>✓ Instant email/SMS известия</span>
+                            <span>✓ Персонализирани праговете</span>
+                            <span>✓ Исторически анализ</span>
+                        </div>
+                        <div class="resource-button coming-soon">Скоро</div>
                     </div>
-                    <div class="testimonial-author">Георги Иванов, Управител на CraftCorp</div>
+                    <div class="resource-status">Скоро</div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        "Благодарение на техните доклади успяхме да идентифицираме нови пазарни възможности и да увеличим продажбите с 30%."
+                <div class="resource-item coming-soon">
+                    <div class="resource-icon">📱</div>
+                    <div class="resource-content">
+                        <h3>Мобилен Портал за Финансови Изводи</h3>
+                        <p>Бърза комуникация и резюмиране на ключови финансови показатели. Винаги под ръка, навсякъде.</p>
+                        <div class="resource-features">
+                            <span>✓ Мобилен достъп 24/7</span>
+                            <span>✓ Кратки финансови резюмета</span>
+                            <span>✓ Push notifications</span>
+                            <span>✓ Офлайн достъп</span>
+                        </div>
+                        <div class="resource-button coming-soon">Скоро</div>
                     </div>
-                    <div class="testimonial-author">Анна Димитрова, Маркетинг Директор GrowthCo</div>
+                    <div class="resource-status">Скоро</div>
                 </div>
+            </div>
+            <div class="resources-cta">
+                <p>Искате да сте първите, които ще получат достъп до новите инструменти?</p>
+                <a href="#contact" class="cta-button">Запишете се за ранен достъп</a>
             </div>
         </div>
     </section>
@@ -826,11 +986,7 @@
                     <h3>Контактна Информация</h3>
                     <div class="info-item">
                         <div class="info-icon">@</div>
-                        <div class="info-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e373038311e2d2a31373d6f6f703c39">[email&#160;protected]</a></div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">☎</div>
-                        <div class="info-text">+359 888 123 456</div>
+                        <div class="info-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="08676e6e616b6d487b7c67616b3939266b6765">[email&#160;protected]</a></div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">◉</div>
@@ -839,6 +995,13 @@
                     <div class="info-item">
                         <div class="info-icon">○</div>
                         <div class="info-text">Пон-Пет: 9:00 - 18:00</div>
+                    </div>
+                    <div class="info-item calendar-booking">
+                        <div class="info-icon">📅</div>
+                        <div class="info-text">
+                            <strong>Запазете час за среща</strong><br>
+                            <a href="#" class="calendar-link">Отворете календар за записване</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -860,13 +1023,9 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
@@ -887,10 +1046,10 @@
             });
         }
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Form submission (you can add your form handling here)
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Благодарим ви за заявката! Ще се свържем с вас възможно най-скоро.');
+            alert('Благодарим ви за съобщението! Ще се свържем с вас скоро.');
         });
     </script>
 </body>
