@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOIC 11 - Business Intelligence & Бизнес Разузнаване</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e1e5e9;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 0;
+            color: #1d6096;
+            letter-spacing: -0.5px;
+        }
+
+        .logo p {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0;
+            color: #666;
+            letter-spacing: 0.2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #1e293b;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('imgs/modern_business_intelligence_analytics_dashboard.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 140px 0 80px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1d6096;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #666;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #1d6096;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #1d6096;
+        }
+
+        /* Stats */
+        .stats {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1d6096;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 80px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+        }
+
+        .service-card {
+            padding: 0;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .service-card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(29, 96, 150, 0.85), rgba(29, 96, 150, 0.75));
+        }
+
+        .service-card-content {
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card .service-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1d6096;
+            border: none;
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+            color: #1e293b;
+            background: #dbeafe;
+            transition: all 0.2s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: #1e293b;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Process */
+        .process {
+            background: linear-gradient(rgba(248, 249, 250, 0.92), rgba(248, 249, 250, 0.92)), url('imgs/modern_data_center_server_racks_technology_business_secure_storage.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 0;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #1e293b;
+            color: white;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .feature-item {
+            padding: 0;
+            text-align: left;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 20px;
+            color: #1e293b;
+            background: #dbeafe;
+            transition: all 0.2s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            background: #1e293b;
+            color: white;
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .feature-item p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)), url('imgs/professional_business_handshake_success_growth_partnership.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: #333;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 500;
+            color: #1a1a1a;
+            font-size: 15px;
+        }
+
+        /* Contact */
+        .contact {
+            background: #fff;
+            padding: 100px 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e1e5e9;
+            border-radius: 6px;
+            background: #fff;
+            color: #333;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1e293b;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #1e293b;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            font-family: inherit;
+            transition: background-color 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: #1e293b;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 32px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .info-item {
+            margin-bottom: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .info-icon {
+            font-size: 20px;
+            color: #1e293b;
+            margin-top: 2px;
+        }
+
+        .info-text {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: #1d6096;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1d6096;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.2s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #1e293b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                gap: 40px;
+            }
+
+            .stats {
+                padding: 60px 0;
+            }
+
+            .services,
+            .features,
+            .process,
+            .testimonials,
+            .contact {
+                padding: 80px 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>STOIC 11</h1>
+                    <p>BI • Бизнес Разузнаване</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Начало</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#process">Процес</a></li>
+                        <li><a href="#features">Възможности</a></li>
+                        <li><a href="#contact">Контакт</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Трансформирайте Данните в Стратегически Предимства</h2>
+            <p>Професионални бизнес анализи и разузнавателни решения за малки и средни предприятия</p>
+            <a href="#contact" class="cta-button">Започнете Днес</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Доволни Клиенти</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Успешни Проекта</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Спестено Време</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">Рейтинг от Клиенти</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Нашите Услуги</h2>
+            <p class="section-subtitle">Предлагаме цялостни решения за бизнес интелигенция, адаптирани към нуждите на вашата компания</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-image" style="background-image: url('imgs/diverse_business_team_data_analysis_meeting_modern_office.jpg');"></div>
+                    <div class="service-icon">⧉</div>
+                    <div class="service-card-content">
+                        <h3>Пазарни Анализи</h3>
+                        <p>Задълбочени анализи на пазарни тенденции, конкурентна интелигенция и възможности за растеж. Идентифицираме ключовите фактори за успех във вашата индустрия.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-image" style="background-image: url('imgs/business_strategy_consulting_meeting_presentation_charts.jpg');"></div>
+                    <div class="service-icon">◈</div>
+                    <div class="service-card-content">
+                        <h3>Стратегически Консултации</h3>
+                        <p>Персонализирани препоръки за оптимизация на бизнес процесите и повишаване на ефективността. Трансформираме данните в стратегически действия.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-image" style="background-image: url('imgs/power_bi_sales_marketing_analytics_dashboard_modern.jpg');"></div>
+                    <div class="service-icon">△</div>
+                    <div class="service-card-content">
+                        <h3>Изпълнителски Доклади</h3>
+                        <p>Автоматизирани доклади за ръководството с ключови показатели и визуализации. Бързо и точно информиране за вземане на решения.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">Нашият Процес</h2>
+            <p class="section-subtitle">Опростен, ефективен подход към бизнес анализите</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Анализ на Нуждите</h3>
+                    <p>Задълбочена консултация за разбиране на вашите специфични бизнес цели и предизвикателства.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Събиране на Данни</h3>
+                    <p>Систематично събиране и обработка на релевантни данни от различни източници.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Анализ и Доклад</h3>
+                    <p>Професионален анализ с actionable препоръки и детайлен доклад за вашето ръководство.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Защо да Изберете STOIC 11?</h2>
+            <p class="section-subtitle">Предимствата, които правят разликата в бизнес анализите</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">○</div>
+                    <h3>Бързи Резултати</h3>
+                    <p>Оптимизирани процеси за бързо доставяне на качествени анализи</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">○</div>
+                    <h3>Персонализиран Подход</h3>
+                    <p>Всеки анализ е адаптиран спрямо специфичните нужди на вашия бизнес</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">▲</div>
+                    <h3>Модерни Технологии</h3>
+                    <p>Използваме най-новите BI инструменти и аналитични методи</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">◇</div>
+                    <h3>Стратегически Фокус</h3>
+                    <p>Не просто данни, а конкретни препоръки за действие</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">□</div>
+                    <h3>Сигурност на Данните</h3>
+                    <p>Висока степен на защита и конфиденциалност на информацията</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">☆</div>
+                    <h3>Експертен Екип</h3>
+                    <p>Опитни специалисти с дългогодишен опит в бизнес анализите</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Какво Казват Нашите Клиенти</h2>
+            <p class="section-subtitle">Реални отзиви от компании, които са трансформирали бизнеса си с нашите анализи</p>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "STOIC 11 трансформира начина, по който вземаме бизнес решения. Техните анализи са точни, бързи и изключително полезни за нашата стратегия."
+                    </div>
+                    <div class="testimonial-author">Мария Петрова, CEO TechStart</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Професионален подход и отлични резултати. Препоръчвам STOIC 11 на всеки, който търси качествени бизнес анализи."
+                    </div>
+                    <div class="testimonial-author">Георги Иванов, Управител на CraftCorp</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Благодарение на техните доклади успяхме да идентифицираме нови пазарни възможности и да увеличим продажбите с 30%."
+                    </div>
+                    <div class="testimonial-author">Анна Димитрова, Маркетинг Директор GrowthCo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Свържете се с Нас</h2>
+            <p class="section-subtitle">Готови сме да обсъдим как можем да помогнем на вашия бизнес</p>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Име</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Компания</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Съобщение</label>
+                            <textarea id="message" name="message" placeholder="Разкажете ни за вашия проект..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Изпратете Заявка</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Контактна Информация</h3>
+                    <div class="info-item">
+                        <div class="info-icon">@</div>
+                        <div class="info-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbb2b5bdb49ba8afb4b2b8eaeaf5b9bc">[email&#160;protected]</a></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">☎</div>
+                        <div class="info-text">+359 888 123 456</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">◉</div>
+                        <div class="info-text">София, България</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">○</div>
+                        <div class="info-text">Пон-Пет: 9:00 - 18:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 STOIC 11 LTD. Всички права запазени. | BI • Бизнес Разузнаване</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Благодарим ви за заявката! Ще се свържем с вас възможно най-скоро.');
+        });
+    </script>
+</body>
+</html>
